@@ -1,0 +1,45 @@
+---
+import Layout from '../layouts/Layout.astro';
+import DigitalIdentity from '../components/DigitalIdentity.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+---
+
+<Layout title="Our Platform Partners">
+  <header class="bg-white py-8 md:py-16 flex items-center justify-center max-w-3xl mx-auto px-4">
+    <DigitalIdentity />
+  </header>
+  <main class="bg-white py-12 md:py-20 px-4 md:px-8">
+    <div class="max-w-6xl mx-auto text-center">
+      <h1 class="text-3xl md:text-5xl font-bold mb-6 md:mb-8 tracking-tight" style="color: #2c3e50; font-family: 'Quicksand', sans-serif; font-weight: 700;">Platform Partners</h1>
+      <p class="text-lg md:text-2xl mb-8 md:mb-12 leading-relaxed font-medium" style="color: #7a9e7e; font-family: 'Quicksand', sans-serif; font-weight: 500;">
+        We leverage industry-leading platforms to deliver exceptional results
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mt-8 md:mt-12">
+        <ServiceCard 
+          title="Astro" 
+          description="Modern web framework for lightning-fast websites" 
+        />
+        <ServiceCard 
+          title="Cloudflare" 
+          description="Global CDN and security for optimal performance" 
+        />
+        <ServiceCard 
+          title="JustDial" 
+          description="India's leading local search engine for business discovery" 
+        />
+        <ServiceCard 
+          title="Google" 
+          description="Search optimization and business visibility solutions" 
+        />
+        <ServiceCard 
+          title="Sanity" 
+          description="Headless CMS for flexible content management" 
+        />
+        <ServiceCard 
+          title="Vercel" 
+          description="Edge deployment for instant global scaling" 
+        />
+      </div>
+    </div>
+  </main>
+</Layout>
