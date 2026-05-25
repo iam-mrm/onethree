@@ -7,7 +7,7 @@ interface Props {
 const { title, description } = Astro.props;
 ---
 
-<div class="p-6 md:p-8 border rounded-lg hover:shadow-lg transition-shadow duration-300 focus-within:ring-2 focus-within:ring-offset-2" style="border-color: #74a4bc; --tw-ring-color: #74a4bc;" tabindex="0">
-  <h3 class="text-lg md:text-xl font-bold mb-3 md:mb-4" style="color: #2c3e50; font-family: 'Quicksand', sans-serif; font-weight: 700;">{title}</h3>
-  <p class="text-sm md:text-base leading-relaxed" style="color: #7a9e7e; font-family: 'Quicksand', sans-serif; font-weight: 500;">{description}</p>
+<div class="p-4 md:p-6 rounded-2xl hover:scale-105 transition-transform duration-300" style="background-color: rgba(122, 158, 126, 0.1); border: 1px solid rgba(116, 164, 188, 0.3);">
+  <h3 class="text-base md:text-lg font-semibold mb-2" style="color: #2c3e50; font-family: 'Quicksand', sans-serif; font-weight: 600;">{title}</h3>
+  <p class="text-xs md:text-sm leading-relaxed" style="color: #7a9e7e; font-family: 'Quicksand', sans-serif; font-weight: 400;">{description}</p>
 </div>
