@@ -1,14 +1,57 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import DigitalIdentity from '../components/DigitalIdentity.astro';
+import ServiceCard from '../components/ServiceCard.astro';
 ---
 
 <Layout 
-  title="Digital Identity | 1.3 | 2.8"
-  description="1.3 Website & 2.8 Visibility - Building digital identity for Kerala businesses."
-  image="/og-digital-identity.jpg"
+  title="Services | 1.3 | 2.8"
+  description="Our services for Kerala SMEs - websites, Google optimization, directory listings, social media, and data analytics."
+  image="/og-home.jpg"
 >
-  <main class="min-h-screen bg-white flex items-center justify-center">
-    <DigitalIdentity />
+  <main class="min-h-screen bg-white py-12 md:py-20 px-4 md:px-8">
+    <div class="max-w-4xl mx-auto text-center mb-12 md:mb-16">
+      <h1 class="text-3xl md:text-5xl font-bold mb-6 md:mb-8 tracking-tight" style="color: #2c3e50; font-family: 'Quicksand', sans-serif; font-weight: 700;">Our Services</h1>
+      <p class="text-lg md:text-2xl leading-relaxed font-medium" style="color: #4a7a4e; font-family: 'Quicksand', sans-serif; font-weight: 500;">
+        Comprehensive digital solutions tailored for Kerala businesses
+      </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-6xl mx-auto">
+      <ServiceCard 
+        title="Entity Foundation" 
+        description="Business name, address, and phone consistent and identical across every platform. Entity established for Google recognition." 
+      />
+      <ServiceCard 
+        title="Google Business Profile" 
+        description="Claimed, verified, fully complete. Correct category, description, services, photos, Q&A answered. Linked to website. Set up once. 6-month refresh on request." 
+      />
+      <ServiceCard 
+        title="Website" 
+        description="Astro + Sanity + Cloudflare. Mobile-first. Under 3 seconds load. HTTPS. NAP matching GBP exactly. Services clear. WhatsApp button. Google Maps. Client owns everything." 
+      />
+      <ServiceCard 
+        title="Schema Markup" 
+        description="LocalBusiness with correct niche type. Organization, WebSite, ContactPoint, OpeningHours. Validated clean. Invisible to user — critical to Google and AI systems." 
+      />
+      <ServiceCard 
+        title="Directory and Citation Presence" 
+        description="JustDial, Sulekha, and relevant niche directories. NAP identical everywhere. Builds entity authority across the web." 
+      />
+      <ServiceCard 
+        title="On-page SEO" 
+        description="Title tags, meta descriptions, header structure, image alt text. Sitemap submitted. Robots.txt configured. All pages indexed and error-free." 
+      />
+      <ServiceCard 
+        title="Content and Answer Signals" 
+        description="Every page answers real customer questions clearly. AIO and AEO principles built in. Content structured for AI answer engines. Baked into every build — not sold separately." 
+      />
+      <ServiceCard 
+        title="WhatsApp Business" 
+        description="Profile set up. Number consistent with GBP and website. WhatsApp button on every page. Completes the contact layer for Kerala users." 
+      />
+      <ServiceCard 
+        title="Analytics and Reporting" 
+        description="GA4 installed. Search Console connected. GBP Insights active. Looker Studio live dashboard built and shared. Baseline report on delivery. Refresh report at 6 months. Client sees their data anytime — you do nothing monthly." 
+      />
+    </div>
   </main>
 </Layout>

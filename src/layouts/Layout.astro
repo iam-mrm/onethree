@@ -1,4 +1,6 @@
 ---
+import Navbar from '../components/Navbar.astro';
+
 interface Props {
   title?: string;
   description?: string;
@@ -63,6 +65,7 @@ const canonicalUrl = fullUrl;
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   </head>
   <body>
+    <Navbar />
     <slot />
   </body>
 </html>

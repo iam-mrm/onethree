@@ -7,7 +7,21 @@ interface Props {
 const { title, description } = Astro.props;
 ---
 
-<div class="p-4 md:p-6 rounded-2xl hover:scale-105 transition-transform duration-300" style="background-color: rgba(122, 158, 126, 0.1); border: 1px solid rgba(116, 164, 188, 0.3);">
-  <h3 class="text-base md:text-lg font-semibold mb-2" style="color: #2c3e50; font-family: 'Quicksand', sans-serif; font-weight: 600;">{title}</h3>
-  <p class="text-xs md:text-sm leading-relaxed" style="color: #7a9e7e; font-family: 'Quicksand', sans-serif; font-weight: 400;">{description}</p>
+<div class="p-5 md:p-6 rounded-2xl hover:scale-105 transition-transform duration-300" style="background-color: rgba(122, 158, 126, 0.1); border: 1px solid rgba(116, 164, 188, 0.3);">
+  <div class="flex items-start gap-4">
+    <div class="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center" style="background-color: rgba(122, 158, 126, 0.2);">
+      <div class="w-2 h-2 rounded-full" style="background-color: #7a9e7e;"></div>
+    </div>
+    <div class="flex-1">
+      <h3 class="text-base md:text-lg font-semibold mb-3" style="color: #2c3e50; font-family: 'Quicksand', sans-serif; font-weight: 600;">{title}</h3>
+      <div class="space-y-2">
+        {description.split('. ').filter(Boolean).map(sentence => (
+          <div class="flex items-start gap-2">
+            <span class="text-xs mt-1.5" style="color: #7a9e7e;">•</span>
+            <p class="text-xs md:text-sm leading-relaxed" style="color: #4a7a4e; font-family: 'Quicksand', sans-serif; font-weight: 400;">{sentence.trim()}.</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
 </div>

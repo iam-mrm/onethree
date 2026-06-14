@@ -1,0 +1,89 @@
+---
+import DigitalIdentity from './DigitalIdentity.astro';
+
+const currentPath = Astro.url.pathname;
+---
+
+<nav class="bg-white border-b" style="border-color: rgba(122, 158, 126, 0.2);">
+  <div class="max-w-6xl mx-auto px-4 md:px-8">
+    <div class="flex items-center justify-between h-16 md:h-20">
+      <!-- Logo/Brand -->
+      <a href="/" class="flex items-center group" style="transform: scale(0.4); transform-origin: left center;">
+        <DigitalIdentity showLabels={false} />
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center space-x-8">
+        <a 
+          href="/" 
+          class="text-base font-medium transition-colors hover:opacity-70"
+          style="color: ${currentPath === '/' ? '#7a9e7e' : '#2c3e50'}; font-family: 'Quicksand', sans-serif; font-weight: 500;"
+        >
+          Home
+        </a>
+        <a 
+          href="/blank" 
+          class="text-base font-medium transition-colors hover:opacity-70"
+          style="color: ${currentPath === '/blank' ? '#7a9e7e' : '#2c3e50'}; font-family: 'Quicksand', sans-serif; font-weight: 500;"
+        >
+          Services
+        </a>
+        <a 
+          href="/platforms" 
+          class="text-base font-medium transition-colors hover:opacity-70"
+          style="color: ${currentPath === '/platforms' ? '#7a9e7e' : '#2c3e50'}; font-family: 'Quicksand', sans-serif; font-weight: 500;"
+        >
+          Platforms
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button 
+        id="mobile-menu-button" 
+        class="md:hidden p-2 rounded-lg transition-colors"
+        style="color: #2c3e50;"
+        aria-label="Toggle menu"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden pb-4">
+      <div class="flex flex-col space-y-3">
+        <a 
+          href="/" 
+          class="text-base font-medium transition-colors hover:opacity-70 py-2"
+          style="color: ${currentPath === '/' ? '#7a9e7e' : '#2c3e50'}; font-family: 'Quicksand', sans-serif; font-weight: 500;"
+        >
+          Home
+        </a>
+        <a 
+          href="/blank" 
+          class="text-base font-medium transition-colors hover:opacity-70 py-2"
+          style="color: ${currentPath === '/blank' ? '#7a9e7e' : '#2c3e50'}; font-family: 'Quicksand', sans-serif; font-weight: 500;"
+        >
+          Services
+        </a>
+        <a 
+          href="/platforms" 
+          class="text-base font-medium transition-colors hover:opacity-70 py-2"
+          style="color: ${currentPath === '/platforms' ? '#7a9e7e' : '#2c3e50'}; font-family: 'Quicksand', sans-serif; font-weight: 500;"
+        >
+          Platforms
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  mobileMenuButton?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+</script>

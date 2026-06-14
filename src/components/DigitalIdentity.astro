@@ -1,7 +1,12 @@
 ---
+interface Props {
+  showLabels?: boolean;
+}
+
+const { showLabels = true } = Astro.props;
 ---
 
-<div class="container">
+<div class={`container ${showLabels ? 'with-labels' : 'without-labels'}`}>
   <div class="corner top-left"></div>
   <div class="corner top-right"></div>
   <div class="corner bottom-left"></div>
@@ -11,9 +16,13 @@
   <div class="divider"></div>
   <div class="number green">2.8</div>
 
-  <div class="label center-fix">website</div>
-  <div class="label ampersand">&</div>
-  <div class="label center-fix">visibility</div>
+  {showLabels && (
+    <>
+      <div class="label center-fix">website</div>
+      <div class="label ampersand">&</div>
+      <div class="label center-fix">visibility</div>
+    </>
+  )}
 </div>
 
 <style>
@@ -24,6 +33,10 @@
     grid-template-columns: 1fr 100px 1fr;
     justify-items: center;
     align-items: center;
+  }
+
+  .container.without-labels {
+    padding: 20px 40px;
   }
 
   .number {
